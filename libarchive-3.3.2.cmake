@@ -2,10 +2,10 @@
 # https://github.com/libarchive/libarchive
 ###########################################################
 
-set(LIBARCHIVE_URL ${3RDPARTY_URL}/libarchive-${LIBARCHIVE_VERSION}.tar.gz)
+set(LIBARCHIVE_URL ${THIRDPARTY_URL}/libarchive-${LIBARCHIVE_VERSION}.tar.gz)
 
 set(LIBARCHIVE_PATCH_FILE libarchive-${LIBARCHIVE_VERSION}.patch)
-set(LIBARCHIVE_PATCH_URL ${3RDPARTY_URL}/${LIBARCHIVE_PATCH_FILE})
+set(LIBARCHIVE_PATCH_URL ${THIRDPARTY_URL}/${LIBARCHIVE_PATCH_FILE})
 
 external(libarchive ${LIBARCHIVE_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

@@ -2,7 +2,7 @@
 # https://github.com/Tencent/rapidjson
 #####################################
 
-set(RAPIDJSON_URL ${3RDPARTY_URL}/rapidjson-${RAPIDJSON_VERSION}.tar.gz)
+set(RAPIDJSON_URL ${THIRDPARTY_URL}/rapidjson-${RAPIDJSON_VERSION}.tar.gz)
 
 external(rapidjson ${RAPIDJSON_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

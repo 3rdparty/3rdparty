@@ -2,10 +2,10 @@
 # http://www.boost.org
 #######################
 
-set(BOOST_URL ${3RDPARTY_URL}/boost-${BOOST_VERSION}.tar.gz)
+set(BOOST_URL ${THIRDPARTY_URL}/boost-${BOOST_VERSION}.tar.gz)
 
 set(BOOST_PATCH_FILE boost-${BOOST_VERSION}.patch)
-set(BOOST_PATCH_URL ${3RDPARTY_URL}/${BOOST_PATCH_FILE})
+set(BOOST_PATCH_URL ${THIRDPARTY_URL}/${BOOST_PATCH_FILE})
 
 external(boost ${BOOST_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

@@ -2,10 +2,10 @@
 # https://github.com/google/googletest
 #######################################################################
 
-set(GOOGLETEST_URL ${3RDPARTY_URL}/googletest-release-${GOOGLETEST_VERSION}.tar.gz)
+set(GOOGLETEST_URL ${THIRDPARTY_URL}/googletest-release-${GOOGLETEST_VERSION}.tar.gz)
 
 set(GOOGLETEST_PATCH_FILE googletest-release-${GOOGLETEST_VERSION}.patch)
-set(GOOGLETEST_PATCH_URL ${3RDPARTY_URL}/${GOOGLETEST_PATCH_FILE})
+set(GOOGLETEST_PATCH_URL ${THIRDPARTY_URL}/${GOOGLETEST_PATCH_FILE})
 
 external(googletest ${GOOGLETEST_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

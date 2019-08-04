@@ -2,7 +2,7 @@
 # https://github.com/cameron314/concurrentqueue
 ######################################################################
 
-set(CONCURRENTQUEUE_URL ${3RDPARTY_URL}/concurrentqueue-${CONCURRENTQUEUE_VERSION}.tar.gz)
+set(CONCURRENTQUEUE_URL ${THIRDPARTY_URL}/concurrentqueue-${CONCURRENTQUEUE_VERSION}.tar.gz)
 
 external(concurrentqueue ${CONCURRENTQUEUE_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

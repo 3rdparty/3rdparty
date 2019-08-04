@@ -2,10 +2,10 @@
 # https://developers.google.com/protocol-buffers/
 #####################################################
 
-set(PROTOBUF_URL ${3RDPARTY_URL}/protobuf-${PROTOBUF_VERSION}.tar.gz)
+set(PROTOBUF_URL ${THIRDPARTY_URL}/protobuf-${PROTOBUF_VERSION}.tar.gz)
 
 set(PROTOBUF_PATCH_FILE protobuf-${PROTOBUF_VERSION}.patch)
-set(PROTOBUF_PATCH_URL ${3RDPARTY_URL}/${PROTOBUF_PATCH_FILE})
+set(PROTOBUF_PATCH_URL ${THIRDPARTY_URL}/${PROTOBUF_PATCH_FILE})
 
 external(protobuf ${PROTOBUF_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

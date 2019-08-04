@@ -2,10 +2,10 @@
 # https://github.com/nodejs/http-parser
 ##################################################
 
-set(HTTP_PARSER_URL ${3RDPARTY_URL}/http-parser-${HTTP_PARSER_VERSION}.tar.gz)
+set(HTTP_PARSER_URL ${THIRDPARTY_URL}/http-parser-${HTTP_PARSER_VERSION}.tar.gz)
 
-set(HTTP_PARSER_PATCH_FILE ${3RDPARTY_URL}/http-parser/CMakeLists.txt.template)
-set(HTTP_PARSER_PATCH_URL ${3RDPARTY_URL}/${HTTP_PARSER_PATCH_FILE})
+set(HTTP_PARSER_PATCH_FILE http-parser/CMakeLists.txt.template)
+set(HTTP_PARSER_PATCH_URL ${THIRDPARTY_URL}/${HTTP_PARSER_PATCH_FILE})
 
 EXTERNAL(http_parser ${HTTP_PARSER_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

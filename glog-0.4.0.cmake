@@ -2,10 +2,10 @@
 # https://github.com/google/glog
 ################################
 
-set(GLOG_URL ${3RDPARTY_URL}/glog-${GLOG_VERSION}.tar.gz)
+set(GLOG_URL ${THIRDPARTY_URL}/glog-${GLOG_VERSION}.tar.gz)
 
 set(GLOG_PATCH_FILE glog-${GLOG_VERSION}.patch)
-set(GLOG_PATCH_URL ${3RDPARTY_URL}/${GLOG_PATCH_FILE})
+set(GLOG_PATCH_URL ${THIRDPARTY_URL}/${GLOG_PATCH_FILE})
 
 external(glog ${GLOG_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

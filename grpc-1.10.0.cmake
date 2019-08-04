@@ -2,10 +2,10 @@
 # https://grpc.io/
 #######################################################################
 
-set(GRPC_URL ${3RDPARTY_URL}/grpc-${GRPC_VERSION}.tar.gz)
+set(GRPC_URL ${THIRDPARTY_URL}/grpc-${GRPC_VERSION}.tar.gz)
 
 set(GRPC_PATCH_FILE grpc-${GRPC_VERSION}.patch)
-set(GRPC_PATCH_URL ${3RDPARTY_URL}/${GRPC_PATCH_FILE})
+set(GRPC_PATCH_URL ${THIRDPARTY_URL}/${GRPC_PATCH_FILE})
 
 external(grpc ${GRPC_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

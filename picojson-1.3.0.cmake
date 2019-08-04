@@ -2,10 +2,10 @@
 # https://github.com/kazuho/picojson
 #####################################
 
-set(PICOJSON_URL ${3RDPARTY_URL}/picojson-${PICOJSON_VERSION}.tar.gz)
+set(PICOJSON_URL ${THIRDPARTY_URL}/picojson-${PICOJSON_VERSION}.tar.gz)
 
 set(PICOJSON_PATCH_FILE picojson-${PICOJSON_VERSION}.patch)
-set(PICOJSON_PATCH_URL ${3RDPARTY_URL}/${PICOJSON_PATCH_FILE})
+set(PICOJSON_PATCH_URL ${THIRDPARTY_URL}/${PICOJSON_PATCH_FILE})
 
 external(picojson ${PICOJSON_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

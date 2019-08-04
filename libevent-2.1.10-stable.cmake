@@ -2,7 +2,7 @@
 # http://libevent.org/
 ##########################################
 
-set(LIBEVENT_URL ${3RDPARTY_URL}/libevent-${LIBEVENT_VERSION}.tar.gz)
+set(LIBEVENT_URL ${THIRDPARTY_URL}/libevent-${LIBEVENT_VERSION}.tar.gz)
 
 external(libevent ${LIBEVENT_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 

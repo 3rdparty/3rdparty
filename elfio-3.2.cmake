@@ -2,7 +2,7 @@
 # http://elfio.sourceforge.net
 ######################################################
 
-set(ELFIO_URL ${3RDPARTY_URL}/elfio-${ELFIO_VERSION}.tar.gz)
+set(ELFIO_URL ${THIRDPARTY_URL}/elfio-${ELFIO_VERSION}.tar.gz)
 
 external(elfio ${ELFIO_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 
