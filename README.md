@@ -44,3 +44,28 @@ thirdparty(
   DEPENDS zlib protobuf)
 ```
 
+## Adding Packages
+
+When writing your own packages you can expect the following variables
+to be useful:
+
+```
+CMAKE_NOOP
+CMAKE_FORWARD_ARGS
+CMAKE_SSL_FORWARD_ARGS
+```
+
+Your `.cmake` file will be invoked after the invocation of
+`thirdparty()` and there will also be the following variables for you
+to use (including the versions of these variables for other packages
+that will have already been configured via `thirdparty()`):
+
+```
+PACKAGE_VERSION
+PACKAGE_HASH
+PACKAGE_TARGET         # Target folder where the package will be put.
+PACKAGE_CMAKE_ROOT     # Where cmake will put the uncompressed source.
+PACKAGE_ROOT           # Where things will be put during the various build stages.
+```
+
+These may be useful for creating a `.cmake` file for your package.
