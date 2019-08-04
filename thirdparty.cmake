@@ -6,8 +6,8 @@ macro(THIRDPARTY_DOWNLOAD FILE)
 endmacro()
 
 thirdparty_download(FindPackageHelper.cmake)
-thirdparty_download(FindApr.cmake)
-thirdparty_download(FindSvn.cmake)
+thirdparty_download(FindAPR.cmake)
+thirdparty_download(FindSVN.cmake)
 
 macro(THIRDPARTY_INCLUDE FILE)
   thirdparty_download(${FILE})
@@ -21,7 +21,7 @@ thirdparty_include(PatchCommand.cmake)
 
 
 # Add the directory we downloaded to so we can use things like
-# `FindApr.cmake` and `FindSvn.cmake` with `find_package()` in the
+# `FindAPR.cmake` and `FindSVN.cmake` with `find_package()` in the
 # future.
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_BINARY_DIR})
 
