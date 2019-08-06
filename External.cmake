@@ -31,6 +31,7 @@ function(EXTERNAL
   LIB_VERSION
   BIN_ROOT)
 
+  string(REGEX REPLACE "-" "_" LIB_NAME ${LIB_NAME})
   string(TOUPPER ${LIB_NAME} LIB_NAME_UPPER)
 
   # Names of variables we will set in this function.
