@@ -34,6 +34,9 @@ function(EXTERNAL
   string(REGEX REPLACE "-" "_" LIB_NAME ${LIB_NAME})
   string(TOUPPER ${LIB_NAME} LIB_NAME_UPPER)
 
+  message(STATUS "LIB_NAME is ${LIB_NAME}")
+  message(STATUS "LIB_NAME_UPPER is ${LIB_NAME_UPPER}")
+
   # Names of variables we will set in this function.
   set(TARGET_VAR     ${LIB_NAME_UPPER}_TARGET)     # e.g., BOOST_TARGET
   set(CMAKE_ROOT_VAR ${LIB_NAME_UPPER}_CMAKE_ROOT) # e.g., BOOST_CMAKE_ROOT

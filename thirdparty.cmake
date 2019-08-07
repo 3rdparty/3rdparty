@@ -108,6 +108,10 @@ macro(THIRDPARTY NAME)
   string(TOUPPER ${NAME} NAME_UPPER)
   string(TOLOWER ${NAME} NAME_LOWER)
 
+  message(STATUS "NAME is ${NAME}")
+  message(STATUS "NAME_LOWER is ${NAME_LOWER}")
+  message(STATUS "NAME_UPPER is ${NAME_UPPER}")
+
   set(THIRDPARTY_KEYWORDS VERSION HASH)
 
   cmake_parse_arguments(THIRDPARTY_ARGS "" "${THIRDPARTY_KEYWORDS}" "" ${ARGN})
