@@ -2,9 +2,6 @@
 # https://www.antlr.org
 ###############################################
 
-# TODO(benh): Rename the target here to `antlr4-runtime` to
-# distinguish that the only thing we're buildling is the C++ runtime.
-
 set(ANTLR4_RUNTIME_URL ${THIRDPARTY_URL}/antlr4-runtime-${ANTLR4_RUNTIME_VERSION}.zip)
 
 external(antlr4-runtime ${ANTLR4_RUNTIME_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
