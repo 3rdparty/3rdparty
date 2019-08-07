@@ -104,15 +104,8 @@ endif ()
 # availble to parent scope since we call `include()` and need those
 # definitions available as well.
 macro(THIRDPARTY NAME)
-  string(REPLACE "-" "_" NAME ${NAME})
-  string(TOUPPER ${NAME} NAME_UPPER)
-  string(TOLOWER ${NAME} NAME_LOWER)
-
-  message
-
-  message(STATUS "NAME is ${NAME}")
-  message(STATUS "NAME_LOWER is ${NAME_LOWER}")
-  message(STATUS "NAME_UPPER is ${NAME_UPPER}")
+  string(REGEX REPLACE "[-]" "_" NAME_UNDERSCORES ${NAME})
+  string(TOUPPER ${NAME_UNDERSCORES} NAME_UPPER)
 
   set(THIRDPARTY_KEYWORDS VERSION HASH)
 
@@ -131,7 +124,7 @@ macro(THIRDPARTY NAME)
   endif ()
 
   # Download the cmake specifics for this package.
-  set(THIRDPARTY_CMAKE_FILE ${NAME_LOWER}-${THIRDPARTY_ARGS_VERSION}.cmake)
+  set(THIRDPARTY_CMAKE_FILE ${NAME}-${THIRDPARTY_ARGS_VERSION}.cmake)
   set(THIRDPARTY_CMAKE_URL ${THIRDPARTY_URL}/${THIRDPARTY_CMAKE_FILE})
   message(STATUS "Downloading 3rdparty/${THIRDPARTY_CMAKE_FILE}")
   file(DOWNLOAD ${THIRDPARTY_CMAKE_URL} ${CMAKE_CURRENT_BINARY_DIR}/${THIRDPARTY_CMAKE_FILE})
