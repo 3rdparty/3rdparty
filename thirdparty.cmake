@@ -104,9 +104,11 @@ endif ()
 # availble to parent scope since we call `include()` and need those
 # definitions available as well.
 macro(THIRDPARTY NAME)
-  string(REGEX REPLACE "-" "_" NAME ${NAME})
+  string(REPLACE "-" "_" NAME ${NAME})
   string(TOUPPER ${NAME} NAME_UPPER)
   string(TOLOWER ${NAME} NAME_LOWER)
+
+  message
 
   message(STATUS "NAME is ${NAME}")
   message(STATUS "NAME_LOWER is ${NAME_LOWER}")
