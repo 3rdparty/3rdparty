@@ -31,11 +31,8 @@ function(EXTERNAL
   LIB_VERSION
   BIN_ROOT)
 
-  string(REPLACE "-" "_" LIB_NAME ${LIB_NAME})
-  string(TOUPPER ${LIB_NAME} LIB_NAME_UPPER)
-
-  message(STATUS "LIB_NAME is ${LIB_NAME}")
-  message(STATUS "LIB_NAME_UPPER is ${LIB_NAME_UPPER}")
+  string(REGEX REPLACE "[-]" "_" LIB_NAME_UNDERSCORES ${LIB_NAME})
+  string(TOUPPER ${LIB_NAME_UNDERSCORES} LIB_NAME_UPPER)
 
   # Names of variables we will set in this function.
   set(TARGET_VAR     ${LIB_NAME_UPPER}_TARGET)     # e.g., BOOST_TARGET
