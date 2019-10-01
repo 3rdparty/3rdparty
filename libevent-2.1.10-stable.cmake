@@ -51,11 +51,11 @@ else ()
 
   set_target_properties(
     libevent_pthreads PROPERTIES
-    IMPORTED_LOCATION ${LIBEVENT_ROOT}-build/lib/libevent_pthreads{LIBRARY_SUFFIX})
+    IMPORTED_LOCATION ${LIBEVENT_ROOT}-build/lib/libevent_pthreads${LIBRARY_SUFFIX})
 
   set_target_properties(
     libevent_openssl PROPERTIES
-    IMPORTED_LOCATION ${LIBEVENT_ROOT}-build/lib/libevent_openssl{LIBRARY_SUFFIX})
+    IMPORTED_LOCATION ${LIBEVENT_ROOT}-build/lib/libevent_openssl${LIBRARY_SUFFIX})
 endif ()
 
 
