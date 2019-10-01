@@ -7,14 +7,24 @@ set(LIBEVENT_URL ${THIRDPARTY_URL}/libevent-${LIBEVENT_VERSION}.tar.gz)
 external(libevent ${LIBEVENT_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(libevent ${LIBRARY_LINKAGE} IMPORTED)
-
 add_dependencies(libevent ${LIBEVENT_TARGET})
+
+add_library(libevent_core ${LIBRARY_LINKAGE} IMPORTED)
+add_dependencies(libevent_core ${LIBEVENT_TARGET})
+
+add_library(libevent_pthreads ${LIBRARY_LINKAGE} IMPORTED)
+add_dependencies(libevent_pthreads ${LIBEVENT_TARGET})
+
+add_library(libevent_openssl ${LIBRARY_LINKAGE} IMPORTED)
+add_dependencies(libevent_openssl ${LIBEVENT_TARGET})
 
 set_target_properties(
   libevent PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${LIBEVENT_ROOT}/include;${LIBEVENT_ROOT}-build/include")
 
 if (WIN32)
+  # TODO(benh): Implement this fully, see what we do below.
+  message(FATAL_ERROR "Support for Windows is not complete")
   if (CMAKE_GENERATOR MATCHES "Visual Studio")
     set_target_properties(
       libevent PROPERTIES
@@ -29,6 +39,18 @@ else ()
   set_target_properties(
     libevent PROPERTIES
     IMPORTED_LOCATION ${LIBEVENT_ROOT}-build/lib/libevent${LIBRARY_SUFFIX})
+
+  set_target_properties(
+    libevent_core PROPERTIES
+    IMPORTED_LOCATION ${LIBEVENT_ROOT}-build/lib/libevent_core${LIBRARY_SUFFIX})
+
+  set_target_properties(
+    libevent_pthreads PROPERTIES
+    IMPORTED_LOCATION ${LIBEVENT_ROOT}-build/lib/libevent_pthreads{LIBRARY_SUFFIX})
+
+  set_target_properties(
+    libevent_openssl PROPERTIES
+    IMPORTED_LOCATION ${LIBEVENT_ROOT}-build/lib/libevent_openssl{LIBRARY_SUFFIX})
 endif ()
 
 
@@ -56,11 +78,14 @@ if (CMAKE_C_COMPILER_ID MATCHES GNU OR CMAKE_C_COMPILER_ID MATCHES Clang)
 MAKE_INCLUDE_DIR(libevent)
 
 GET_BYPRODUCTS(libevent)
+GET_BYPRODUCTS(libevent_core)
+GET_BYPRODUCTS(libevent_pthreads)
+GET_BYPRODUCTS(libevent_openssl)
 
 ExternalProject_Add(
   ${LIBEVENT_TARGET}
   PREFIX            ${LIBEVENT_CMAKE_ROOT}
-  BUILD_BYPRODUCTS  ${LIBEVENT_BYPRODUCTS}
+  BUILD_BYPRODUCTS  ${LIBEVENT_BYPRODUCTS};${LIBEVENT_CORE_BYPRODUCTS};${LIBEVENT_PTHREADS_BYPRODUCTS};${LIBEVENT_OPENSSL_BYPRODUCTS}
   CMAKE_ARGS        ${LIBEVENT_CMAKE_FORWARD_ARGS}
   INSTALL_COMMAND   ${CMAKE_NOOP}
   URL               ${LIBEVENT_URL}
