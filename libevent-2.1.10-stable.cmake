@@ -6,9 +6,6 @@ set(LIBEVENT_URL ${THIRDPARTY_URL}/libevent-${LIBEVENT_VERSION}.tar.gz)
 
 external(libevent ${LIBEVENT_VERSION} ${CMAKE_CURRENT_BINARY_DIR})
 
-add_library(libevent ${LIBRARY_LINKAGE} IMPORTED)
-add_dependencies(libevent ${LIBEVENT_TARGET})
-
 add_library(libevent_core ${LIBRARY_LINKAGE} IMPORTED)
 add_dependencies(libevent_core ${LIBEVENT_TARGET})
 
@@ -17,6 +14,12 @@ add_dependencies(libevent_pthreads ${LIBEVENT_TARGET})
 
 add_library(libevent_openssl ${LIBRARY_LINKAGE} IMPORTED)
 add_dependencies(libevent_openssl ${LIBEVENT_TARGET})
+
+add_library(libevent ${LIBRARY_LINKAGE} IMPORTED)
+add_dependencies(libevent ${LIBEVENT_TARGET})
+
+# TODO(benh): Should we always include these sub-libraries?
+target_link_libraries(libevent INTERFACE libevent_core libevent_pthreads libevent_openssl)
 
 set_target_properties(
   libevent PROPERTIES
